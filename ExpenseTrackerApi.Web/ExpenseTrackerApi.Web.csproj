@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ExpenseTrackerApi.Infrastructure.Persistence\ExpenseTrackerApi.Infrastructure.Persistence.csproj" />
       <ProjectReference Include="..\ExpenseTrackerApi.Infrastructure\ExpenseTrackerApi.Infrastructure.csproj" />
     </ItemGroup>
 
