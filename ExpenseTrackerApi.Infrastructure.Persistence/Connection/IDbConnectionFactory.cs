@@ -4,5 +4,5 @@ namespace ExpenseTrackerApi.Infrastructure.Persistence.Connection;
 
 public interface IDbConnectionFactory
 {
-    Task<IDbConnection> ConnectAsync();
+    Task<IDbConnection> ConnectAsync(CancellationToken ct = default);
 }

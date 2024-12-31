@@ -1,4 +1,5 @@
 using ExpenseTrackerApi.Infrastructure.Persistence.Extensions;
+using ExpenseTrackerApi.Infrastructure.Persistence.Migrations;
 using ExpenseTrackerApi.Web.Constants;
 using ExpenseTrackerApi.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -17,5 +18,9 @@ if (!app.Environment.IsProduction())
 {
     app.MapOpenApi();
 }
+
+app.Services
+    .GetRequiredService<MigratorDbInitializer>()
+    .Migrate();
 
 app.Run();

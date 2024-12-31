@@ -11,7 +11,16 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.1.35" />
+        <PackageReference Include="dbup-postgresql" Version="5.0.40" />
         <PackageReference Include="Npgsql" Version="9.0.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Migrations\Scripts\000002 - Create user table.sql" />
+      <EmbeddedResource Include="Migrations\Scripts\000002 - Create user table.sql" />
+      <None Remove="Migrations\Scripts\000001 - Initial.sql" />
+      <EmbeddedResource Include="Migrations\Scripts\000001 - Initial.sql" />
     </ItemGroup>
 
 </Project>

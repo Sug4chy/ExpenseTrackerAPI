@@ -12,10 +12,10 @@ public sealed class NpgsqlDbConnectionFactory : IDbConnectionFactory
         _connectionString = connectionString;
     }
 
-    public async Task<IDbConnection> ConnectAsync()
+    public async Task<IDbConnection> ConnectAsync(CancellationToken ct = default)
     {
         var connection = new NpgsqlConnection(_connectionString);
-        await connection.OpenAsync();
+        await connection.OpenAsync(ct);
         return connection;
     }
 }
